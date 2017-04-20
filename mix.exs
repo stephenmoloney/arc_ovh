@@ -49,11 +49,7 @@ defmodule ArcOvh.Mixfile do
 
   defp docs do
     [
-     main: "README.md",
-     extra_section: "GUIDE",
-     extras: [
-              "README.md": [path: "README.md", title: "GUIDE"]
-             ]
+     extras: ["README.md"]
     ]
   end
 
