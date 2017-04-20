@@ -30,4 +30,5 @@ config :arc,
   client: ArcOvh.Client.Cloudstorage,
   pseudofolder: "dev_folder",
   container: "dev_container",
+  default_tempurl_ttl: (30 * 24 * 60 * 60), # 30 days default time to live for signed urls.
   version_timeout: (60 * 3 * 1000) # 3 minutes
