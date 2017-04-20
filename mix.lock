@@ -1,4 +1,4 @@
-%{"arc": {:hex, :arc, "0.7.0", "36ba65e390c2f869b98ebbe79d66eedf383788875986a20a546f19d87e4f13ac", [:mix], [{:ex_aws, "~> 1.1", [hex: :ex_aws, optional: true]}, {:httpoison, "~> 0.11", [hex: :httpoison, optional: false]}, {:poison, "~> 2.2 or ~> 3.1", [hex: :poison, optional: true]}, {:sweet_xml, "~> 0.6", [hex: :sweet_xml, optional: true]}]},
+%{"arc": {:hex, :arc, "0.8.0", "bb7cf8ea50f30f9c2bb357270c074def42a7ec6a3b4605be731cc5faf8fde6fd", [:mix], [{:ex_aws, "~> 1.1", [hex: :ex_aws, optional: true]}, {:httpoison, "~> 0.11", [hex: :httpoison, optional: false]}, {:poison, "~> 2.2 or ~> 3.1", [hex: :poison, optional: true]}, {:sweet_xml, "~> 0.6", [hex: :sweet_xml, optional: true]}]},
   "calendar": {:hex, :calendar, "0.17.2", "d6b7bccc29c72203b076d4e488d967780bf2d123a96fafdbf45746fdc2fa342c", [:mix], [{:tzdata, "~> 0.5.8 or ~> 0.1.201603", [hex: :tzdata, optional: false]}]},
   "certifi": {:hex, :certifi, "1.0.0", "1c787a85b1855ba354f0b8920392c19aa1d06b0ee1362f9141279620a5be2039", [:rebar3], []},
   "earmark": {:hex, :earmark, "1.2.0", "bf1ce17aea43ab62f6943b97bd6e3dc032ce45d4f787504e3adf738e54b42f3a", [:mix], []},

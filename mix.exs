@@ -29,7 +29,7 @@ defmodule ArcOvh.Mixfile do
 
   defp deps do
     [
-      {:arc, "~> 0.7"},
+      {:arc, "~> 0.8"},
       {:openstex_adapters_ovh, ">= 0.3.4"},
       {:plug, "~> 1.0"},
 
