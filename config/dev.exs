@@ -1,0 +1,33 @@
+use Mix.Config
+
+config :arc_ovh, ArcOvh.Client.Cloudstorage,
+    adapter: Openstex.Adapters.Ovh,
+    ovh: [
+      application_key: System.get_env("APPLICATION_KEY"),
+      application_secret: System.get_env("APPLICATION_SECRET"),
+      consumer_key: System.get_env("CONSUMER_KEY")
+    ],
+    keystone: [
+      tenant_id: System.get_env("TENANT_ID"), # mandatory, corresponds to an ovh project id or ovh servicename
+      user_id: System.get_env("USER_ID"), # optional, if absent a user will be created using the ovh api.
+      endpoint: "https://auth.cloud.ovh.net/v2.0"
+    ],
+    swift: [
+      account_temp_url_key1: System.get_env("TEMP_URL_KEY1"), # defaults to :nil if absent
+      account_temp_url_key2: System.get_env("TEMP_URL_KEY2"), # defaults to :nil if absent
+      region: :nil
+    ],
+    hackney: [
+      timeout: 20000,
+      recv_timeout: 40000
+    ]
+
+config :httpipe,
+  adapter: HTTPipe.Adapters.Hackney
+
+config :arc,
+  storage: Arc.Storage.Ovh.Cloudstorage,
+  client: ArcOvh.Client.Cloudstorage,
+  pseudofolder: "dev_folder",
+  container: "dev_container",
+  version_timeout: (60 * 3 * 1000) # 3 minutes
