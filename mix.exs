@@ -66,7 +66,7 @@ defmodule ArcOvh.Mixfile do
       licenses: ["MIT"],
       maintainers: ["Stephen Moloney"],
       links: %{ "GitHub" => "https://github.com/stephenmoloney/arc_ovh"},
-      files: ~w(lib mix.exs README* LICENCE* CHANGELOG*)
+      files: ~w(lib mix.exs README* LICENSE* CHANGELOG*)
      }
   end
 
