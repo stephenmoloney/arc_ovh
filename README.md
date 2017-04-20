@@ -132,7 +132,10 @@ openstack server.
 
 - The image used in the tests was taken in bundoran Ireland by me a few years back.
 
-<img src="https://github.com/stephenmoloney/arc_ovh/test/fixtures/bundoran.jpg" width="400">
+<p align="center">
+  <img src="https://github.com/stephenmoloney/arc_ovh/blob/master/test/fixtures/bundoran.jpg?raw=true" width="600">
+</p>
+
 
 
 ## License
