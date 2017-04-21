@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.1
+
+- remove use of pseudofolder from documentation as it is
+completely optional.
+
 ## v0.1.0
 
 - Initial commit

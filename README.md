@@ -22,7 +22,6 @@ end
 config :arc,
   storage: Arc.Storage.Ovh.Cloudstorage,
   client: ArcOvh.Client.Cloudstorage,
-  pseudofolder: "my_app",
   container: "default",
   default_tempurl_ttl: (30 * 24 * 60 * 60), # 30 days default time to live for signed urls.
   version_timeout: (60 * 3 * 1000) # 3 minutes
@@ -64,7 +63,6 @@ config :httpipe,
 ```elixir
 defmodule DummyDefinitionThumbnail do
     use Arc.Definition
-    defp pseudofolder(), do: Application.get_env(:arc, :pseudofolder, "test_folder")
     @versions [:original, :thumbnail]
 
     def transform(:thumbnail, _) do
@@ -79,11 +77,11 @@ defmodule DummyDefinitionThumbnail do
 
     def storage_dir(_version, {_file, scope}) do
       (scope != :nil && Map.has_key?(scope, :id)) &&
-       "#{pseudofolder()}/#{scope.id}" ||
-       "#{pseudofolder()}"
+       "#{scope.id}" ||
+       ""
     end
     def storage_dir(_version, _) do
-       "#{pseudofolder()}"
+       ""
     end
 
     def filename(version, {file, _scope}) do
