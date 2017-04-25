@@ -30,9 +30,14 @@ defmodule Arc.Storage.Ovh.Cloudstorage do
     end
   end
 
+  def delete(_definition, _version, {file, :nil}) do
+    server_object= parse_objectname_from_url(file.file_name)
+    client().swift().delete_object(server_object, container())
+    :ok
+  end
   def delete(definition, version, {file, scope}) do
     server_object = build_path(definition, version, {file, scope})
-    client().swift().delete_object!(server_object, container())
+    client().swift().delete_object(server_object, container())
     :ok
   end
 
@@ -68,6 +73,11 @@ defmodule Arc.Storage.Ovh.Cloudstorage do
   defp build_signed_url(definition, version, file_and_scope, options) do
     server_object = build_path(definition, version, file_and_scope)
     client().swift().generate_temp_url(container(), server_object, options)
+  end
+
+  defp parse_objectname_from_url(url) do
+    [_host, server_object] = String.split(url, "#{host()}/")
+    server_object
   end
 
   defp upload_file(destination_dir, file) do

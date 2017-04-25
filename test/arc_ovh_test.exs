@@ -114,6 +114,30 @@ defmodule ArcOvhTest do
     assert(object_exists_after_deletion_thumbnail? == :false)
   end
 
+  test "Url deletion, unsigned, without scope" do
+    {:ok, _object_basename} = DummyDefinitionThumbnail.store({image(), %{id: 1}})
+    actual_original_url = DummyDefinitionThumbnail.url({image(), %{id: 1}}, :original)
+    actual_thumbnail_url = DummyDefinitionThumbnail.url({image(), %{id: 1}}, :thumbnail)
+
+    original_server_object = actual_original_url |> String.split(test_container() <> "/") |> List.last()
+    thumbnail_server_object = actual_thumbnail_url |> String.split(test_container() <> "/") |> List.last()
+
+    object_exists_before_deletion_original? = object_exists?(original_server_object)
+    object_exists_before_deletion_thumbnail? = object_exists?(thumbnail_server_object)
+
+    :ok = DummyDefinitionThumbnail.delete(actual_original_url)
+    :ok = DummyDefinitionThumbnail.delete(actual_thumbnail_url)
+    :timer.sleep(300)
+
+    object_exists_after_deletion_original? = object_exists?(original_server_object)
+    object_exists_after_deletion_thumbnail? = object_exists?(thumbnail_server_object)
+
+    assert(object_exists_before_deletion_original? == :true)
+    assert(object_exists_before_deletion_thumbnail? == :true)
+    assert(object_exists_after_deletion_original? == :false)
+    assert(object_exists_after_deletion_thumbnail? == :false)
+  end
+
 
   test "Url deletion, signed" do
     {:ok, object_basename} = DummyDefinitionThumbnail.store({image(), %{id: 1}})

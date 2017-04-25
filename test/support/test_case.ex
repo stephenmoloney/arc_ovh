@@ -28,9 +28,18 @@ defmodule ArcOvh.TestCase do
   end
 
   defp delete_container!() do
-    @client.swift().delete_pseudofolder(test_pseudofolder(), test_container())
-    V1.delete_container(test_container(), @client.swift().get_account())
-    |> @client.request!()
+    if test_container() in @client.swift().list_containers!() do
+      @client.swift().list_pseudofolders!(test_container())
+      |> Enum.each(fn(pseudofolder) ->
+        @client.swift().delete_pseudofolder(pseudofolder, test_container())
+      end)
+      @client.swift().list_objects!("", test_container())
+      |> Enum.each(fn(obj) ->
+        @client.swift().delete_object(obj, test_container())
+      end)
+      V1.delete_container(test_container(), @client.swift().get_account())
+      |> @client.request!()
+    end
   end
 
 end
