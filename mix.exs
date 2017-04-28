@@ -1,7 +1,7 @@
 defmodule ArcOvh.Mixfile do
   use Mix.Project
   @elixir_versions "~> 1.4 or ~> 1.5"
-  @version "0.1.1"
+  @version "0.1.2"
 
   def project do
     [
@@ -22,7 +22,7 @@ defmodule ArcOvh.Mixfile do
   def application do
     [
       mod: {ArcOvh.Application, []},
-      extra_applications: [:logger]
+      extra_applications: [:logger, :openstex_adapters_ovh]
     ]
   end
 
@@ -30,7 +30,7 @@ defmodule ArcOvh.Mixfile do
   defp deps do
     [
       {:arc, "~> 0.8"},
-      {:openstex_adapters_ovh, ">= 0.3.4"},
+      {:openstex_adapters_ovh, ">= 0.3.5"},
       {:plug, "~> 1.0"},
 
        # dev/test deps

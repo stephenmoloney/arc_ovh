@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.1.2
+
+[changes]
+- bump version of `:openstex_adapters_ovh` to `0.3.5`
+- Add `:openstex_adapters_ovh` to list of applications to avoid
+mix release warnings.
+
+
 ## v0.1.1
 
 [bugfix]
