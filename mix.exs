@@ -22,7 +22,7 @@ defmodule ArcOvh.Mixfile do
   def application do
     [
       mod: {ArcOvh.Application, []},
-      extra_applications: [:logger, :openstex_adapters_ovh]
+      extra_applications: []
     ]
   end
 
@@ -30,7 +30,7 @@ defmodule ArcOvh.Mixfile do
   defp deps do
     [
       {:arc, "~> 0.8"},
-      {:openstex_adapters_ovh, ">= 0.3.5"},
+      {:openstex_adapters_ovh, ">= 0.3.6"},
       {:plug, "~> 1.0"},
 
        # dev/test deps
