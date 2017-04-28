@@ -1,7 +1,7 @@
 defmodule ArcOvh.Mixfile do
   use Mix.Project
   @elixir_versions "~> 1.4 or ~> 1.5"
-  @version "0.1.2"
+  @version "0.1.3"
 
   def project do
     [

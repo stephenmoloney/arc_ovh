@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.3
+
+[changes]
+- bump dependencies
+
 ## v0.1.2
 
 [changes]
