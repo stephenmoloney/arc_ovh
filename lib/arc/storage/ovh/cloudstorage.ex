@@ -82,7 +82,7 @@ defmodule Arc.Storage.Ovh.Cloudstorage do
 
   defp upload_file(destination_dir, file) do
     filename = Path.join(destination_dir, file.file_name)
-    extension = Plug.MIME.path(file.file_name)
+    extension = MIME.from_path(file.file_name)
     client().swift().upload_file(file.path, filename, container(), [content_type: extension])
   end
 

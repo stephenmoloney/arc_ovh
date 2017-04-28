@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.4
+
+[changes]
+- bump dependencies
+- Remove `Plug.MIME.path/1` in favour of `MIME.path/1`
+
 ## v0.1.3
 
 [changes]
