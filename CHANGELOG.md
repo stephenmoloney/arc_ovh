@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.5
+
+[changes]
+- bump openstex_adapters_ovh dependency
+
 ## v0.1.4
 
 [changes]
