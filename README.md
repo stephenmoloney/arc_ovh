@@ -10,7 +10,7 @@ list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:arc_ovh, "~> 0.1"}]
+  [{:arc_ovh, "~> 0.2"}]
 end
 ```
 

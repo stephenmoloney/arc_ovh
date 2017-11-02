@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.0
+
+[changes]
+- Update dependencies for elixir 1.5+
+
 ## v0.1.5
 
 [changes]

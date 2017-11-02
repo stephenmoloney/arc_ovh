@@ -11,5 +11,4 @@ defmodule ArcOvh.Client.Cloudstorage do
     @moduledoc :false
     use ExOvh.Client, otp_app: :arc_ovh, client: __MODULE__
   end
-
 end

@@ -1,7 +1,7 @@
 defmodule ArcOvh.Mixfile do
   use Mix.Project
-  @elixir_versions "~> 1.4 or ~> 1.5"
-  @version "0.1.5"
+  @elixir_versions "~> 1.5"
+  @version "0.2.0"
 
   def project do
     [
@@ -30,12 +30,12 @@ defmodule ArcOvh.Mixfile do
   defp deps do
     [
       {:arc, "~> 0.8"},
-      {:openstex_adapters_ovh, ">= 0.3.8"},
+      {:openstex_adapters_ovh, "~> 0.4"},
       {:mime, "~> 1.1"},
 
        # dev/test deps
       {:markdown, github: "devinus/markdown", only: :dev},
-      {:ex_doc,  "~> 0.14", only: :dev},
+      {:ex_doc,  "~> 0.18", only: :dev},
       {:fastimage, "~> 0.0.7", only: :test}
     ]
   end
